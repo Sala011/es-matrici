@@ -1,0 +1,81 @@
+import java.util.Arrays;
+import java.util.Scanner;
+public class Es_Matrice {
+  public static void main(String[] args) {
+    Scanner t=new Scanner(System.in);
+		int[] a = {2,44,55,13,62};
+    int ricercato;
+    System.out.println(Arrays.toString(a));
+		sortCrescente(a);
+		System.out.println(Arrays.toString(a));
+    sortDecrescente(a);
+    System.out.println(Arrays.toString(a));
+
+    System.out.println("che numero vuoi cercare?");
+    ricercato=t.nextInt();
+    System.out.println("il numero è in posizione " + ricercabinaria(a, ricercato);
+
+System.out.println("che numero vuoi cercare?");
+    ricercato=t.nextInt();
+    System.out.println("il numero è in posizione " + RicercaOrdinaria(a, ricercato);
+	}
+
+public static void sortCrescente (int[] a) {
+   for (int i = 0; i < a.length - 1; i++) {
+		 int posMin = i;
+		 for (int j = i + 1; j < a.length; j++) {
+			 if(a[posMin]>a[j]) {
+          posMin=j;
+		 }
+	 }
+		 int temp = a[i];
+      a[i] = a[posMin];
+      a[posMin] = temp;
+	 }
+}
+	
+public static void sortDecrescente (int[] a) {
+   for (int i = 0; i < a.length - 1; i++) {
+		 int posMax = i;
+		 for (int j = i + 1; j < a.length; j++) {
+			 if(a[posMax]<a[j]) {
+                 posMax=j;
+		 }
+	 }
+		 int temp = a[i];
+      a[i] = a[posMax];
+      a[posMax] = temp;
+	 }
+}
+private int ricercabinaria(int V[], int x){
+    int dim= V.length;
+    int primo=0; 
+    int ultimo=dim-1; 
+    int medio;
+    int trovato=-1;
+    while(primo<=ultimo){ 
+        medio=(primo+ultimo)/2;
+        if (x==V[medio]){
+            trovato=medio;
+            break;
+        }
+        else if(x<V[medio]){
+            ultimo=medio-1;
+        }
+        else {
+            primo=medio+1;
+        }
+    }
+    return trovato;
+}
+
+private static int RicercaOrdinaria (int V[], int x){
+    int trovato=-1;
+    for(int i=0; i<V.length; i++){
+        if(x==V[i])
+            ordinato=i;
+        break;
+    }
+    return trovato;
+}
+}
